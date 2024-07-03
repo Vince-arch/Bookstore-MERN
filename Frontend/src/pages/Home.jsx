@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Spinner from '../components/Spinner';
 import { Link } from 'react-router-dom';
-import { AiOutlineEdit } from 'react-icons/ai';
+import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs'
-import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
+import { MdOutlineAddBox} from 'react-icons/md';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://localhost:55555/books')
+      .get('http://localhost:5555/books')
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
@@ -47,16 +47,16 @@ const Home = () => {
             {books.map((book, index) => (
               <tr key={book._id} className='h-8'>
                 <td className='border border-slate-700 rounded-md text-center'>
-                  (index + 1)
+                  {index + 1}
                 </td>
                 <td className='border border-slate-700 rounded-md text-center'>
-                  (book.title)
+                  {book.title}
                 </td>
                 <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
-                  (book.author)
+                  {book.author}
                 </td>
                 <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
-                  (book.publishYear)
+                  {book.publishYear}
                 </td>
                 <td className='border border-slate-700 rounded-md text-center'>
                   <div className='flex justify-center gap-x-4'>
