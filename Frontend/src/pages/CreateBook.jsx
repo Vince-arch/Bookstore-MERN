@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 
-const CreateBooks = () => {
+const CreateBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishYear, setPublishYear] = useState('');
@@ -72,4 +72,4 @@ const CreateBooks = () => {
   )
 }
 
-export default CreateBooks
+export default CreateBook
